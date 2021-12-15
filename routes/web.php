@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\ControllerUser;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,5 +17,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [Controller::class, 'accueil'])->name('accueil');
 Route::get('/series', [Controller::class, 'series'])->name('series');
+Route::resource('utilisateur', '\App\Http\Controllers\ControlleurUser');
 
 //Route::post("/login", );
