@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\SeriesControllers;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,8 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('/',[Controller::class, 'accueil'])->name('accueil');
+Route::get('/series', [SeriesControllers::class, 'series'])->name('series');
+Route::get('/detailsSerie', [SeriesControllers::class, 'series'])->name('detailsSerie');
 //Route::post("/login", );

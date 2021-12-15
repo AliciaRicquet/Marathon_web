@@ -34,4 +34,16 @@ class Serie extends Model {
         return $this->hasMany(Comment::class, "serie_id");
     }
 
+    public function nbEpisodes() {
+        return $this->episodes()->count();
+    }
+
+    public function nbSaisons() {
+        return $this->episodes->max('saison');
+    }
+
+    public function serie(){
+        return this;
+    }
+
 }
