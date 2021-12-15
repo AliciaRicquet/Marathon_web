@@ -13,15 +13,15 @@
 <body>
 <header>
     <a href="{{ url('/') }}">
-        Ma super appli
+        Action
     </a>
 </header>
 <!-- Authentication Links -->
 <nav>
     <ul>
         @guest
-            <li><a href="{{ route('login') }}">Login</a></li>
-            <li><a href="{{ route('register') }}">Register</a></li>
+            <li><a href="{{ route('connexion') }}">Connexion</a></li>
+            <li><a href="{{ route('inscription') }}">Inscription</a></li>
         @else
             <li> Bonjour {{ Auth::user()->name }}</li>
             @if (Auth::user())
