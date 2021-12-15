@@ -14,11 +14,8 @@ class SeriesControllers extends Controller
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-
     public function series(){
         $series = Serie::all();
         return view('series',['series'=>$series]);
     }
-
-
 }
