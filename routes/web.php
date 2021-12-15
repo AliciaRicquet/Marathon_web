@@ -4,7 +4,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\DetailsControllers;
 use App\Http\Controllers\SeriesControllers;
 use Illuminate\Support\Facades\Route;
-
+use Symfony\Component\Routing\Exception\RouteNotFoundException;
 /*
 |--------------------------------------------------------------------------
 | Web Routes

@@ -13,7 +13,7 @@
 <body>
 <header>
     <a href="{{ url('/') }}">
-        Ma super appli
+        Action
     </a>
 </header>
 <!-- Authentication Links -->
