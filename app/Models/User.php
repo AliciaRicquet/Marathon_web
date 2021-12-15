@@ -11,7 +11,7 @@ use Laravel\Sanctum\HasApiTokens;
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
-    public $timestamps = false;
+    public bool $timestamps = false;
     /**
      * The attributes that are mass assignable.
      *
@@ -51,6 +51,6 @@ class User extends Authenticatable
     function seen() {
         return $this->belongsToMany(Episode::class, 'seen')
             ->as('when')
-            ->withPivot('date_seen');
+            ->withPivot('episode_id');
     }
 }
