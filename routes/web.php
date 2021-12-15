@@ -22,6 +22,7 @@ Route::get('/inscription', [ControllerAccueil::class, 'inscription'])-> name ('i
 Route::get('/inscription', [ControllerAccueil::class, 'store'])-> name('store');
 Route::get('/connexion', [ControllerAccueil::class, 'connexion'])-> name('connexion');
 
+/**
 try {
     Route::dispatch();
 } catch (RouteNotFoundException $e) {
@@ -31,4 +32,6 @@ try {
     // Ca bug ...
     Route::getPublisher()->publish(new HtmlResponse(sprintf('Internal error. %s',$e->getMessage()), 500));
 }
+ **/
+
 //Route::post("/login", );
