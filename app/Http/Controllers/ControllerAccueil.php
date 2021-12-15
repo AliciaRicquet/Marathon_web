@@ -22,16 +22,4 @@ class ControllerAccueil extends Controller
 
         return view('series', ['series'=>$series]);
     }
-
-    public function inscription(){
-        return view('inscription');
-    }
-
-    public function store(){
-
-    }
-
-    public function connexion(){
-        return view('connexion');
-    }
 }
