@@ -8,8 +8,8 @@
     <meta name="authors" content="Victor Wallart, Léa Henin, Manoi Boinet">
     <meta name="keywords" content="R A N D O M, Mini-Facebook, DUT MMI">
     <title>Action 404</title>
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="css/404.css">
+    <link rel="stylesheet" href="ressources/css/normalize.css" />
+    <link rel="stylesheet" href="ressources/css/404.css">
     <!-- METTRE UNE IMAGE !!!!!!!!!!!!!!!!!     <link rel="icon" type="image/png" href="/img/icon.png" /> -->
 </head>
 
