@@ -3,7 +3,7 @@
 @section('content')
     <h1>Liste complète des séries!</h1>
     @foreach($series as $serie)
-        <p>{{$serie}}</p><br>
+        <p>{{$serie -> image}}</p><br>
     @endforeach
 @endsection
 
