@@ -16,7 +16,6 @@
             <label for = "mail"> e-mail : </label>
             <input  id="mail" type = "text" name ="telephone" placeholder="Saisir l'adresse email">
         </div>
-        <button type="reset">Annuler</button>
         <button type="submit">Envoyer</button>
     </form>
 @endsection
