@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\ControllerAccueil;
 use Illuminate\Support\Facades\Route;
-
+use Symfony\Component\Routing\Exception\RouteNotFoundException;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,8 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [ControllerAccueil::class, 'accueil'])->name('accueil');
+Route::get('/series', [ControllerAccueil::class, 'series'])->name('series');
+
+
 
 //Route::post("/login", );
