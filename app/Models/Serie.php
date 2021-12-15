@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Serie extends Model {
     use HasFactory;
 
+    /**
+     * @var string[]
+     */
     protected $fillable = [
         "id",
         "nom",
@@ -24,11 +27,9 @@ class Serie extends Model {
 
     public $timestamps = false;
 
-    // A serie has many episodes
     public function episodes() {
         return $this->hasMany(Episode::class, "serie_id");
     }
-
     // A serie has many comments
     public function comments() {
         return $this->hasMany(Comment::class, "serie_id");
