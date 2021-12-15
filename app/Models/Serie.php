@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Serie extends Model {
     use HasFactory;
+    public bool $timestamps = false;
 
     /**
      * @var string[]
@@ -24,8 +25,6 @@ class Serie extends Model {
         "avis",
         "urlAvis",
     ];
-
-    public bool $timestamps = false;
 
     public function episodes() {
         return $this->hasMany(Episode::class, "serie_id");
