@@ -20,8 +20,8 @@
 <nav>
     <ul>
         @guest
-            <li><a href="{{ route('connexion') }}">Connexion</a></li>
-            <li><a href="{{ route('inscription') }}">Inscription</a></li>
+            <li><a href="{{ route('login') }}">Login</a></li>
+            <li><a href="{{ route('register') }}">Register</a></li>
         @else
             <li> Bonjour {{ Auth::user()->name }}</li>
             @if (Auth::user())
