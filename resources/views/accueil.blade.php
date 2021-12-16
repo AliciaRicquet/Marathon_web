@@ -48,9 +48,8 @@
                 </form>
             </div>-->
         </div>
-    @endguest
         <!--</div>-->
-    </header>
+
 
         <div id="textepage1">
 
@@ -72,5 +71,7 @@
                 @endforeach
             </div>
         </div>
+        @endguest
+    </header>
     </html>
 @endsection

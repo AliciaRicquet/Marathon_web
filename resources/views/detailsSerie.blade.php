@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    <html lang="fr">
     <h1>Details de la serie</h1>
         <img src="{{asset($detailsSeries->urlImage)}}" alt="Image Serie">
         <p>Date de sortie: {{$detailsSeries->premiere}}</p>
@@ -41,4 +42,5 @@
             <p><img src="{{asset($ep->urlImage)}}" alt="Image Episodes"></p>
         @endforeach
     @endguest
+    </html>
 @endsection

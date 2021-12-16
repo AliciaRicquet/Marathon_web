@@ -40,7 +40,13 @@
     #infos {
         padding-top: 30px;
         padding-bottom: 30px;
-        padding-left: 70px;
+        padding-left: 20px;
         text-align: left;
+    }
+    #infos > h1 {
+    padding-top: 5px;
+}
+    #serieslike {
+        display: block;
     }
 }

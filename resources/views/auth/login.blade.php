@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <html>
+    <html lang="fr">
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -45,7 +45,7 @@
                     {{ __('Se souvenir de moi') }}
                 </label> <br>
                 <!--<input type="password" class="searchbar" id="mdpconfirme" name="mdpconfirme" placeholder="Confirmer Mot De Passe"required> <br>-->
-                <button type="submit" class="searchbar" id="submitconnexion" name="submitconnexion" value="ME CONNECTER" required>
+                <button type="submit" class="searchbar" id="submitconnexion" name="submitconnexion" value="ME CONNECTER">
                     {{ __('SE CONNECTER') }}
                 </button> <br>
             </form>
