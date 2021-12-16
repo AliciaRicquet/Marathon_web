@@ -22,5 +22,5 @@ Route::get('/',[Controller::class, 'accueil'])->name('accueil');
 Route::get('/series', [SeriesControllers::class, 'series'])->name('series');
 Route::get('/detailsSerie/{id}', [DetailsControllers::class, 'detailSeries'])->name('detailsSerie');
 Route::resource('utilisateur', '\App\Http\Controllers\ControlleurUser');
-
+Route::post('/comments', [SeriesControllers::class, 'commenter'])->middleware('auth');
 //Route::post("/login", );

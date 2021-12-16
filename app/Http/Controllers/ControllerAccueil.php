@@ -16,10 +16,10 @@ class ControllerAccueil extends Controller
         return view('accueil');
     }
 
-
     public function series(){
         $series = Serie::orderBy('note','desc')->limit(5)->get();
 
         return view('series', ['series'=>$series]);
     }
+
 }

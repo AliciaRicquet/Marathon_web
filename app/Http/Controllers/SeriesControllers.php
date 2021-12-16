@@ -3,6 +3,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use App\Models\Serie;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -17,5 +18,18 @@ class SeriesControllers extends Controller
     public function series(){
         $series = Serie::all();
         return view('series',['series'=>$series]);
+    }
+
+    public function commenter(Request  $request) {
+        $comment = new Comment();
+        $comment->content= $request->input("content");
+        "note",
+        "validated" = 0,
+        "user_id" Auth::id(),
+        "serie_id", id
+
+        $comment->save();
+        return back();
+
     }
 }

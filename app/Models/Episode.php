@@ -26,4 +26,9 @@ class Episode extends Model {
             ->as('when')
             ->withPivot('date_seen');
     }
+
+    function insert(){
+
+    }
+
 }
