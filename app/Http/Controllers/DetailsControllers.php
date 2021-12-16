@@ -19,7 +19,7 @@ class DetailsControllers
         //}
 
 
-        return view('detailsSerie',['detailsSeries'=>$s, 'tab3'=>$tab3]);
+        return view('detailsSerie',['detailsSeries'=>$s]);
 
     }
 

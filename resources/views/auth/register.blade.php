@@ -23,7 +23,7 @@
             <h1 id="form1">INSCRIPTION</h1>
             <form id="connexion" action="{{ route('register') }}" method="POST">
                 @csrf
-                <input type="text" class="searchbar @error('name') is-invalid @enderror" id="pseudo" name="pseudo" placeholder="Entrez votre pseudo"  value="{{ old('name') }}" required autocomplete="name" autofocus>
+                <input type="text" class="searchbar @error('name') is-invalid @enderror" id="pseudo" name="name" placeholder="Entrez votre pseudo"  value="{{ old('name') }}" required autocomplete="name" autofocus>
                 @error('name')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -37,14 +37,14 @@
                 </span>
                 @enderror
                 <br>
-                <input type="password" class="searchbar @error('password') is-invalid @enderror" id="mdp" name="mdp" placeholder="Entrez votre Mot De Passe" required autocomplete="new-password">
+                <input type="password" class="searchbar @error('password') is-invalid @enderror" id="mdp" name="password" placeholder="Entrez votre Mot De Passe" required autocomplete="new-password">
                     @error('password')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{$message}}</strong>
                     </span>
                 @enderror
                 <br>
-                <input type="password" class="searchbar" id="mdpconfirme" name="mdpconfirme" placeholder="Confirmer Mot De Passe" required autocomplete="new-password">
+                <input type="password" class="searchbar" id="mdpconfirme" name="password_confirmation" placeholder="Confirmer Mot De Passe" required autocomplete="new-password">
                 <br>
                 <button type="submit" class="searchbar" id="submitconnexion" name="submitconnexion" value="S'INSCRIRE">
                     {{ __('Inscription') }}

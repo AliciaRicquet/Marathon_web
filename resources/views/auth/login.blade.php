@@ -1,73 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-{{--    <div id="main404">
-        <div class="error-monkey">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-md-8">
-                        <div class="card">
-                            <div class="card-header">{{ __('CONNEXION') }}</div>
-
-                            <div class="card-body">
-                                <form method="POST" action="{{ route('login') }}">
-                                    @csrf
-
-                                    <div class="row mb-3">
-                                        <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                                        <div class="col-md-6">
-                                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                            @error('email')
-                                            <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                            @enderror
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                                        <div class="col-md-6">
-                                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                            @error('password')
-                                            <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                            @enderror
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <div class="col-md-6 offset-md-4">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                                <label class="form-check-label" for="remember">
-                                                    {{ __('Remember Me') }}
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-0">
-                                        <div class="col-md-8 offset-md-4">
-                                            <button type="submit" class="btn btn-primary">
-                                                {{ __('Login') }}
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>--}}
 <div id="main404">
     <div class="error-monkey">
 
@@ -75,10 +8,34 @@
         <form method="POST" action="{{ route('login') }}" id ="connexion">
         @csrf
             <!--<input type="text" class="searchbar" id="pseudo" name="pseudo" placeholder="Entrez votre pseudo" required> <br> -->
-            <input type="text" class="searchbar" id="email" name="email" placeholder="Entrez votre e-mail" required> <br>
-            <input type="password" class="searchbar" id="mdp" name="password" placeholder="Entrez votre Mot De Passe" required> <br>
+            <input type="text" class="searchbar @error('email') is-invalid @enderror" id="email" name="email"
+                   placeholder="Entrez votre e-mail" value="{{ old('email') }}"
+                   required autocomplete="email" autofocus>
+            @error('email')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
+            <br>
+            <input type="password" class="searchbar @error('password') is-invalid @enderror" id="mdp" name="password"
+                   placeholder="Entrez votre Mot De Passe" required autocomplete="current-password">
+            @error('password')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
+            <br>
+            <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+
+            <label class="form-check-label" for="remember">
+                {{ __('Se souvenirs de moi') }}
+            </label>
+            <br>
+            <button type="submit" type="submit" class="searchbar" id="submitconnexion" name="submitconnexion" value="ME CONNECTER">
+                {{ __('SE CONNECTER') }}
+            </button>
             <!--<input type="password" class="searchbar" id="mdpconfirme" name="mdpconfirme" placeholder="Confirmer Mot De Passe"required> <br>-->
-            <input type="submit" class="searchbar" id="submitconnexion" name="submitconnexion" value="ME CONNECTER" required> <br>
+            <br>
         </form>
 
     </div>
