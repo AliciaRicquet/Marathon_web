@@ -40,4 +40,15 @@ class SeriesControllers extends Controller
         $comment->save();
         return redirect()->route('detailsSerie', [$id]);
     }
+
+    public function genreSerie($genre){
+        $seriesGenre = Serie::where('genre', '=', $genre)->get();
+        return view('genre', ['seriesGenre'=>$seriesGenre]);
+    }
+
+    public function detailSeries($id_s){
+        $s = Serie::find($id_s);
+        return view('detailsSerie',['detailsSeries'=>$s]);
+    }
+
 }
