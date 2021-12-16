@@ -10,13 +10,11 @@
         <p>{{$detailsSeries->nbSaisons()}} Saisons</p>
 
     @auth
-        <form action="{{route('detailsSerie.commenter')}}" method="post">
+        <form action="{{route('detailsSerie.commenter',[$detailsSeries->id])}}" method="post">
+            @csrf
             <input type="hidden" value="{{$detailsSeries->id}}" id="id" name="id">
             <input type="number" min="0" max="10" value="5" id="note" name="note" />
-            <textarea id="content" name="content">
-
-
-            </textarea>
+            <textarea id="content" name="content"> </textarea>
 
             <input type="submit" />
         </form>

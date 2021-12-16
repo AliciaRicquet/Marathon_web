@@ -15,22 +15,5 @@ class DetailsControllers
         return view('detailsSerie',['detailsSeries'=>$s]);
     }
 
-    public function commenter(Request  $request) {
-        $this->validate(
-            $request,
-            [
-                'id' => 'required',
-                'note' => 'required',
-                'content' => 'required',
-            ]
-        );
-        $comment = new Comment();
-        $comment->content= $request->content;
-        $comment->note = $request->note;
-        $comment->validated = 0;
-        $comment->user_id = Auth::id();
-        $comment->serie_id = $request->id;
-        $comment->save();
-        return redirect("detailsSerie/".$comment->serie_id);
-    }
+
 }
