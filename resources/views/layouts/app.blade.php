@@ -8,7 +8,9 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name', 'Laravel') }}</title>
     <!-- Styles -->
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset ("css/normalize.css")}}" />
+    <link rel="stylesheet" href="{{asset ("css/Accueil.css")}}">
+    <link rel="stylesheet" href="{{asset ("css/connexionresponsive.css")}}">
 </head>
 <body>
 <!-- Authentication Links -->
