@@ -15,10 +15,14 @@
     @endguest
     @if(Auth::user()->administrateur)
         <h2>Liste des commentaires à valider</h2>
-        @foreach($tab2 as $vl)
+        @foreach($tab as $l1)
             <details>
-                    <summary>{{$l->nom}}</summary>
-                    {!! $vl->note !!}{!! $vl->content !!}
+                <summary>{{$l1->nom}}</summary>
+                @foreach($tab2 as $vl)
+                    @if($vl->validated and $vl->serie_id == $l1 -> id)
+                        {!! $vl->note !!}{!! $vl->content !!}
+                    @endif
+                @endforeach
             </details>
         @endforeach
     @endif

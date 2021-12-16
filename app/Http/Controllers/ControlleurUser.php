@@ -6,9 +6,6 @@ use App\Models\Comment;
 use App\Models\Episode;
 use App\Models\Serie;
 use App\Models\User;
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Contracts\View\Factory;
-use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
@@ -18,7 +15,7 @@ class ControlleurUser extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return Application|Factory|View
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function index()
     {
@@ -32,11 +29,13 @@ class ControlleurUser extends Controller
         $tab = array_unique($tab);
 
 
-        foreach($val as $v){
-            if($v->validated != 0){
-                $tab2[] = Comment::find($v->validated);
-            }
-        }
+        //foreach($val as $v){
+            //if($v->validated != 0){
+              //  $tab2[] = Comment::find($v->validated);
+            //}
+        //}
+
+        $tab2 = Comment::all();
         return view('utilisateur.index', ['tab' => $tab, 'tab2' => $tab2]);
     }
 
