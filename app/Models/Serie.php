@@ -43,8 +43,4 @@ class Serie extends Model {
         return $this->episodes->max('saison');
     }
 
-    public function serie(){
-        return this;
-    }
-
 }
