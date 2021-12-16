@@ -12,7 +12,8 @@
         <title>CONNEXION</title>
         <link rel="stylesheet" href="{{ URL::asset('/css/normalize.css') }}" />
         <link rel="stylesheet" href="{{ URL::asset ('/css/Accueil.css') }}"/>
-        <link rel="icon" type="image/png" href=/img/images/connexionimg.jpg" />
+        <link rel="stylesheet" href="{{ URL::asset ('/css/connexionresponsive.css') }}">
+        <link rel="icon" type="image/png" href=public/img/images/connexionimg.jpg" />
     </head>
     <div id="main404">
         <div class="error-monkey">

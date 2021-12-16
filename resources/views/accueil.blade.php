@@ -1,7 +1,62 @@
-@extends('layouts.app');
+@extends('layouts.app')
 
 @section('content')
-    <h2>Liste complète des séries</h2>
+    <html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="R A N D O M est un réseau social mettant en relation les gamers.">
+        <title>A C C U E I L</title>
+        <link rel="stylesheet" href="{{ URL::asset('/css/normalize.css') }}">
+        <link rel="stylesheet" href="{{ URL::asset ('/css/Accueil.css') }}">
+        <link rel="stylesheet" href="{{ URL::asset ('/css/accueilresponsive.css') }}">
+        <link rel="icon" type="image/png" href="public/img/images/fond1.jpg">
+    </head>
+
+
+    <header>
+
+        <!--<div id="backgroundheader">-->
+        <div id="header" style="background-image: url({{asset('/img/images/fond1.jpg')}})">
+            <img src="{{asset('img/images/logo.png')}}" href="#textepage1">
+            <a href="/">ACCUEIL</a>
+            <a href="series">SÉRIES</a>
+            <a href="#">PROFIL</a>
+            @guest
+            <a href="{{ route('login') }}">SE CONNECTER</a>
+            <a href="{{ route('register') }}">S'INSCRIRE</a>
+            @else
+                <ul>
+                    <li> Bonjour {{ Auth::user()->name }}</li>
+                    @if (Auth::user())
+                        <li><a href="#">Des liens spécifiques pour utilisateurs connectés..</a></li>
+                    @endif
+                    <li><a href="{{ route('logout') }}"
+                           onclick="event.preventDefault();
+                           document.getElementById('logout-form').submit();">
+                            Logout
+                        </a></li>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                    </form>
+                </ul>
+            <!--<div id="search">
+                <form>
+                    <input type="image" id="recherche" alt="search" src="images/recherche.png">
+                    <input value="" id="searchbar" onkeyup="search_animal()" type="text" name="search" placeholder="Rechercher...">
+                </form>
+            </div>-->
+        </div>
+    @endguest
+        <!--</div>-->
+    </header>
+
+        <div id="textepage1">
+
+            <div id="texteaccueil"><p>Découvrez vos <br> séries préférées !</p></div>
+
+            <div id="fleche"> <a href="#textepage2"><img src="{{asset("img/images/fleche.png")}}"></a></div>
 
         </div>
 
