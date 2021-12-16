@@ -21,7 +21,7 @@
 
 
             <h1 id="form1">INSCRIPTION</h1>
-            <form id="connexion" action="{{ route('register') }}">
+            <form id="connexion" action="{{ route('register') }}" method="POST">
                 @csrf
                 <input type="text" class="searchbar @error('name') is-invalid @enderror" id="pseudo" name="pseudo" placeholder="Entrez votre pseudo"  value="{{ old('name') }}" required autocomplete="name" autofocus>
                 @error('name')
@@ -46,7 +46,7 @@
                 <br>
                 <input type="password" class="searchbar" id="mdpconfirme" name="mdpconfirme" placeholder="Confirmer Mot De Passe" required autocomplete="new-password">
                 <br>
-                <button type="submit" class="searchbar" id="submitconnexion" name="submitconnexion" value="S'INSCRIRE" required>
+                <button type="submit" class="searchbar" id="submitconnexion" name="submitconnexion" value="S'INSCRIRE">
                     {{ __('Inscription') }}
                 </button>
                 <br>

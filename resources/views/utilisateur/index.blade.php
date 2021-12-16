@@ -13,6 +13,26 @@
         <link rel="stylesheet" href="{{ URL::asset ('/css/profilresponsive.css') }}">
 
     </head>
+    <header>
+
+        <!--<div id="backgroundheader">-->
+        <div id="header">
+            <img src="images/logo.png" href="#textepage1">
+            <a href="accueil">ACCUEIL</a>
+            <a href="series">SÉRIES</a>
+            <a href="index">PROFIL</a>
+            <a href="login">SE CONNECTER</a>
+            <a href="register">S'INSCRIRE</a>
+            <!--<div id="search">
+                <form>
+                    <input type="image" id="recherche" alt="search" src="images/recherche.png">
+                    <input value="" id="searchbar" onkeyup="search_animal()" type="text" name="search" placeholder="Rechercher...">
+                </form>
+            </div>-->
+        </div>
+        <!--</div>-->
+
+    </header>
     <content>
         @guest
             <h2>L'accès à cette page vous est interdit!</h2>
