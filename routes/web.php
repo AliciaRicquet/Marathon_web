@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\ControllerAccueil;
+use App\Http\Controllers\ControllerUser;
+use App\Http\Controllers\DetailsControllers;
+use App\Http\Controllers\SeriesControllers;
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\Routing\Exception\RouteNotFoundException;
 /*
@@ -16,8 +19,8 @@ use Symfony\Component\Routing\Exception\RouteNotFoundException;
 */
 
 Route::get('/', [ControllerAccueil::class, 'accueil'])->name('accueil');
-Route::get('/series', [ControllerAccueil::class, 'series'])->name('series');
-
-
+Route::get('/series', [SeriesControllers::class, 'series'])->name('series');
+Route::get('/detailsSerie/{id}', [DetailsControllers::class, 'detailSeries'])->name('detailsSerie');
+Route::resource('utilisateur', '\App\Http\Controllers\ControlleurUser');
 
 //Route::post("/login", );
