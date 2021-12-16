@@ -12,6 +12,12 @@
     <link rel="stylesheet" href="{{asset ("css/Accueil.css")}}">
     <link rel="stylesheet" href="{{asset ("css/connexionresponsive.css")}}">
 </head>
+<style>
+    html {
+        background-image: url({{asset('/img/images/fond1.jpg')}});
+
+    }
+</style>
 <body>
 <!-- Authentication Links -->
 <div id="main">
