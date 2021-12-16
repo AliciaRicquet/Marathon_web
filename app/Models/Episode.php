@@ -22,7 +22,7 @@ class Episode extends Model {
     }
 
     function seen() {
-        return $this->belongsToMany(Episode::class, 'seen')
+        return $this->belongsToMany(User::class, 'seen')
             ->as('when')
             ->withPivot('date_seen');
     }
