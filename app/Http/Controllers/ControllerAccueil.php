@@ -13,13 +13,9 @@ class ControllerAccueil extends Controller
 
     public function accueil()
     {
-        return view('accueil');
-    }
+        $series = Serie::orderBy('note', 'desc')->limit(5)->get();
 
+        return view('accueil', ['series' => $series]);
 
-    public function series(){
-        $series = Serie::orderBy('note','desc')->limit(5)->get();
-
-        return view('series', ['series'=>$series]);
     }
 }

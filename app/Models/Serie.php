@@ -25,7 +25,7 @@ class Serie extends Model {
         "urlAvis",
     ];
 
-    public bool $timestamps = false;
+    public $timestamps = false;
 
     public function episodes() {
         return $this->hasMany(Episode::class, "serie_id");
