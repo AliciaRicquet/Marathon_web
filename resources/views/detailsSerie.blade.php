@@ -20,10 +20,13 @@
         </form>
         @foreach($detailsSeries->comments as $c)
             {!! $c->content !!}
+            @if($c->user_id == Auth::id())
+                <p>"en attente de validation"</p>
+            @endif
         @endforeach
         <p>Liste des episodes</p>
         @foreach($detailsSeries->episodes as $ep)
-            <p>{{$ep->nom}}, Saison: {{$ep->saison}}</p>
+            <p>{{$ep->nom}},Episode: {{$ep->numero}} de la saison {{$ep->saison}}</p>
             <input type="checkbox" id="vu" name="vu">
             <label for="vu"><img src="{{asset($ep->urlImage)}}" alt="Image Episodes"></label>
         @endforeach
@@ -32,9 +35,9 @@
         @foreach($detailsSeries->comments as $c)
             {!! $c->content !!}
         @endforeach
-        <p>Liste des episodes</p>
+        <br><p>Liste des episodes</p>
         @foreach($detailsSeries->episodes as $ep)
-            <p>{{$ep->nom}}, Saison: {{$ep->saison}}</p>
+            <p>{{$ep->nom}}, Episode: {{$ep->numero}} de la saison {{$ep->saison}}</p>
             <p><img src="{{asset($ep->urlImage)}}" alt="Image Episodes"></p>
         @endforeach
     @endguest
