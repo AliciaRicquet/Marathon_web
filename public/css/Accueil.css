@@ -1,10 +1,17 @@
-* { 
-	font-family: Futura; 
+* {
+    font-family: Futura;
+
+}
+@font-face {
+    font-family: 'Futura';
+    src: url('/fonts/futura/Futura medium bt.tff') format('truetype');
+    font-weight: normal;
+    font-style : normal;
 }
 
 html {
     margin:0;
-    background-image: url(images/fond1.jpg);
+    background-image: url(/img/images/fond1.jpg);
     background-size: 100%;
     background-repeat: no-repeat;
     scroll-behavior: smooth;
@@ -87,8 +94,8 @@ html {
 /**************** PARTIE 2 ****************/
 
 #textepage2 {
-    height: 100vh;
-    background-image: url(images/fond2.jpg);
+    height: 100%;
+    background-image: url(/img/images/fond2.jpg);
 }
 
 #soulignement {
@@ -136,7 +143,7 @@ html {
 }
 
 #texteseries {
-    background-image: url(images/fond2.jpg);
+    background-image: url(/img/images/fond2.jpg);
     background-repeat: repeat;
     margin-top: -60px;
 }
@@ -214,7 +221,7 @@ html {
 
 #main404 {
     color: black;
-    background-image: url("../connexionimg.jpg");
+    background-image: url("/img/images/connexionimg.jpg");
     position: fixed;
     height: 100%;
     width: 100%;

@@ -14,7 +14,7 @@ class Episode extends Model {
         "urlImage",
     ];
 
-    public bool $timestamps = false;
+    public $timestamps = false;
 
     // An episode is related to a serie
     public function serie() {
