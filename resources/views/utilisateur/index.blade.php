@@ -10,7 +10,16 @@
 
         <h2>Liste des séries vues: </h2>
         @foreach($tab as $l)
-            <a href="" target="_blank"><img src="{{$l->urlImage}}" alt="Image de la série"></a>
+            <a href="../detailsSerie/{{$l->id}}" target="_blank"><img src="{{$l->urlImage}}" alt="Image de la série"></a>
         @endforeach
     @endguest
+    @if(Auth::user()->administrateur)
+        <h2>Liste des commentaires à valider</h2>
+        @foreach($tab2 as $vl)
+            <details>
+                    <summary>{{$l->nom}}</summary>
+                    {!! $vl->note !!}{!! $vl->content !!}
+            </details>
+        @endforeach
+    @endif
 @endsection
