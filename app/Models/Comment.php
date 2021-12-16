@@ -16,7 +16,7 @@ class Comment extends Model {
         "user_id",
         "serie_id",];
 
-    // A comment is written by an user
+    // A comment is written by a user
     public function utilisateur() {
         return $this->belongsTo(User::class, 'user_id');
     }
