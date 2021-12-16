@@ -20,6 +20,8 @@
         </form>
         @foreach($detailsSeries->comments as $c)
             {!! $c->content !!}
+            @if(Auth::user()->administrateur)
+            @endif
         @endforeach
         <p>Liste des episodes</p>
         @foreach($detailsSeries->episodes as $ep)

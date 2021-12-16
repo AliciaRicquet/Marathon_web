@@ -19,45 +19,17 @@ class ControlleurUser extends Controller
      */
     public function index()
     {
-        $user =Auth::user();
-        $is = $user -> seen;
-        $val = $user -> comments;
+        $user = Auth::user();
+        $is = $user->seen;
+        $val = $user->comments;
 
-        foreach($is as $vu){
+        foreach ($is as $vu) {
             $tab[] = Serie::find($vu->serie_id);
         }
         $tab = array_unique($tab);
 
-
-        //foreach($val as $v){
-            //if($v->validated != 0){
-              //  $tab2[] = Comment::find($v->validated);
-            //}
-        //}
-
         $tab2 = Comment::all();
         return view('utilisateur.index', ['tab' => $tab, 'tab2' => $tab2]);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param Request $request
-     * @return Response
-     */
-    public function store(Request $request)
-    {
-        //
     }
 
     /**
@@ -69,28 +41,5 @@ class ControlleurUser extends Controller
     {
         $iu = User::find($id);
         return view('utilisateur.show', ['iu' => $iu]);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param Request $request
-     * @param  int  $id
-     * @return Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
     }
 }
