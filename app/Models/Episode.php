@@ -14,10 +14,21 @@ class Episode extends Model {
         "urlImage",
     ];
 
-    public bool $timestamps = false;
+    public $timestamps = false;
 
     // An episode is related to a serie
     public function serie() {
         return $this->belongsTo(Serie::class, "serie_id");
     }
+
+    function seen() {
+        return $this->belongsToMany(Episode::class, 'seen')
+            ->as('when')
+            ->withPivot('date_seen');
+    }
+
+    function episodesVu(){
+
+    }
+
 }

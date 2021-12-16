@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Serie;
 use App\Models\User;
+
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -20,12 +21,4 @@ class Controller extends BaseController
         return view('accueil');
     }
 
-    public function series()
-    {
-        $series = Serie::all();
-
-        //$series = Serie::where('genre', 'Crime')->orderBy('nom')->get();
-
-        return view('series', ['series'=>$series]);
-    }
 }
