@@ -21,4 +21,12 @@ class Controller extends BaseController
         return view('accueil');
     }
 
+    public function series()
+    {
+        $series = Serie::all();
+
+        //$series = Serie::where('genre', 'Crime')->orderBy('nom')->get();
+
+        return view('series', ['series'=>$series]);
+    }
 }

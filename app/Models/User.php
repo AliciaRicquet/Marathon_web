@@ -51,6 +51,6 @@ class User extends Authenticatable
     function seen() {
         return $this->belongsToMany(Episode::class, 'seen')
             ->as('when')
-            ->withPivot('date_seen');
+            ->withPivot('episode_id');
     }
 }

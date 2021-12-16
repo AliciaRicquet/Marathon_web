@@ -7,6 +7,13 @@ body{
     font-family: 'Futura';
 }
 
+@font-face {
+    font-family: 'Futura';
+    src: url('/fonts/futura/Futura medium bt.tff') format('truetype');
+    font-weight: normal;
+    font-style : normal;
+}
+
 .error-monkey{
     margin-left: auto;
     margin-right: auto;
