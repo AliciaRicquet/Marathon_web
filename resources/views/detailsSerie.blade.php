@@ -21,6 +21,7 @@
         @foreach($detailsSeries->comments as $c)
             {!! $c->content !!}
             @if(Auth::user()->administrateur)
+                <p>"En attente de validation"</p>
             @endif
         @endforeach
         <p>Liste des episodes</p>
@@ -39,5 +40,6 @@
             <p>{{$ep->nom}}, Episode: {{$ep->numero}} de la saison {{$ep->saison}}</p>
             <p><img src="{{asset($ep->urlImage)}}" alt="Image Episodes"></p>
         @endforeach
+    @endguest
 
 @endsection
