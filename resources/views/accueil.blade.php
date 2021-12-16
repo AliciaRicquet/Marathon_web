@@ -5,4 +5,5 @@
 
     <p>Voici la liste complète des séries via le lien ci dessous:</p>
     <a href ="series">Cliquez ici!</a>
+
 @endsection
