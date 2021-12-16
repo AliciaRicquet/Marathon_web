@@ -9,10 +9,36 @@
         <p>Resume: {!! $detailsSeries->resume !!}</p>
         <p>{{$detailsSeries->nbSaisons()}} Saisons</p>
 
+    @auth
+        <form action="{{route('detailsSerie.commenter',[$detailsSeries->id])}}" method="post">
+            @csrf
+            <input type="hidden" value="{{$detailsSeries->id}}" id="id" name="id">
+            <input type="number" min="0" max="10" value="5" id="note" name="note" />
+            <textarea id="content" name="content"> </textarea>
+
+            <input type="submit" />
+        </form>
+        @foreach($detailsSeries->comments as $c)
+            {!! $c->content !!}
+            @if($c->user_id == Auth::id())
+                <p>"en attente de validation"</p>
+            @endif
+        @endforeach
         <p>Liste des episodes</p>
         @foreach($detailsSeries->episodes as $ep)
-            <p>{{$ep->nom}}, Saison: {{$ep->saison}}</p>
+            <p>{{$ep->nom}},Episode: {{$ep->numero}} de la saison {{$ep->saison}}</p>
+            <input type="checkbox" id="vu" name="vu">
+            <label for="vu"><img src="{{asset($ep->urlImage)}}" alt="Image Episodes"></label>
+        @endforeach
+    @endauth
+    @guest
+        @foreach($detailsSeries->comments as $c)
+            {!! $c->content !!}
+        @endforeach
+        <br><p>Liste des episodes</p>
+        @foreach($detailsSeries->episodes as $ep)
+            <p>{{$ep->nom}}, Episode: {{$ep->numero}} de la saison {{$ep->saison}}</p>
             <p><img src="{{asset($ep->urlImage)}}" alt="Image Episodes"></p>
         @endforeach
-
+    @endguest
 @endsection
