@@ -27,8 +27,8 @@ class Episode extends Model {
             ->withPivot('date_seen');
     }
 
-    function insert(){
+    //function insert(){
 
-    }
+    //}
 
 }

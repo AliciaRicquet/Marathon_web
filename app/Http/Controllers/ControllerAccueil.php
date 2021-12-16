@@ -11,15 +11,8 @@ class ControllerAccueil extends Controller
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public function accueil()
-    {
-        return view('accueil');
-    }
-
-    public function series(){
+    public function accueil(){
         $series = Serie::orderBy('note','desc')->limit(5)->get();
-
-        return view('series', ['series'=>$series]);
+        return view('accueil', ['series'=>$series]);
     }
-
 }

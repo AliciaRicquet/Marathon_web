@@ -23,13 +23,11 @@ class SeriesControllers extends Controller
     public function commenter(Request  $request) {
         $comment = new Comment();
         $comment->content= $request->input("content");
-        "note",
-        "validated" = 0,
-        "user_id" Auth::id(),
-        "serie_id", id
-
+        $comment->note = $request->input("note");
+        $comment->validated = 0;
+        $comment->user_id = Auth::id();
+        $comment->serie_id = $request->input("id");
         $comment->save();
         return back();
-
     }
 }
