@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Episode;
+use App\Models\Serie;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Auth;
 
 class ControlleurUser extends Controller
 {
@@ -16,9 +18,14 @@ class ControlleurUser extends Controller
      */
     public function index()
     {
-        $ie = User::seen();
-        $is = Episode::all();
-        return view('utilisateur.index', ['ie' => $ie, 'is' =>$is]);
+        $user =Auth::user();
+        $is = $user -> seen;
+
+        foreach($is as $vu){
+            $tab[] = Serie::find($vu->serie_id);
+        }
+        $tab = array_unique($tab);
+        return view('utilisateur.index', ['tab' => $tab]);
     }
 
     /**
