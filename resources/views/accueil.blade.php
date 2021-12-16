@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="R A N D O M est un réseau social mettant en relation les gamers.">
         <title>A C C U E I L</title>
-        <link rel="stylesheet" href="{{ URL::asset('/css/normalize.css') }}" />
+        <link rel="stylesheet" href="{{ URL::asset('/css/normalize.css') }}">
         <link rel="stylesheet" href="{{ URL::asset ('/css/Accueil.css') }}">
         <link rel="icon" type="image/png" href="public/img/images/fond1.jpg">
     </head>

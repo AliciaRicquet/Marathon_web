@@ -18,22 +18,25 @@
         <div class="error-monkey">
             <h1>CONNEXION</h1>
             <form id="connexion" method="POST" action="{{ route('login') }}">
+            @csrf
                 <!--<input type="text" class="searchbar" id="pseudo" name="pseudo" placeholder="Entrez votre pseudo" required> <br> -->
-                <input type="text" class="searchbar" id="email" name="email" placeholder="Entrez votre e-mail" @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus> <br>
+                <input type="text" class="searchbar @error('email') is-invalid @enderror" id="email" name="email" placeholder="Entrez votre e-mail"  value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                 @error('email')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>
                 @enderror
+                <br>
 
-                <input type="password" class="searchbar" id="mdp" name="mdp" placeholder="Entrez votre Mot De Passe" @error('password') is-invalid @enderror" name="password" required autocomplete="current-password"> <br>
+                <input type="password" class="searchbar @error('password') is-invalid @enderror" id="mdp" name="mdp" placeholder="Entrez votre Mot De Passe" required autocomplete="current-password"><br>
 
                 @error('password')
                 <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-                @enderror>
+                        <strong>{{$message}}</strong>
+                    </span>
+                @enderror
+
 
                 <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
