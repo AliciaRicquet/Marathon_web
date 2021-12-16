@@ -11,6 +11,18 @@ use Illuminate\Support\Facades\Auth;
 
 class DetailsControllers
 {
+    public function detailSeries($id_s){
+        $s = Serie::find($id_s);
+
+        //foreach($s as $rw){
+          //  $tab3[] = Comment::find($rw->serie_id);
+        //}
+
+
+        return view('detailsSerie',['detailsSeries'=>$s]);
+
+    }
+
     public function store(Request $request){
 
         $this->validate(

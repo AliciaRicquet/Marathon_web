@@ -11,7 +11,32 @@
     <link rel="stylesheet" href="{{asset ("css/normalize.css")}}" />
     <link rel="stylesheet" href="{{asset ("css/Accueil.css")}}">
     <link rel="stylesheet" href="{{asset ("css/connexionresponsive.css")}}">
+    <link rel="stylesheet" href="{{asset ("css/accueilresponsive.css")}}">
+    <link rel="stylesheet" href="{{asset ("css/inscriptionresponsive.css")}}">
+    <link rel="stylesheet" href="{{asset ("css/detailseriesresponsive.css")}}">
+    <link rel="stylesheet" href="{{asset ("css/seriesresponsive.css")}}">
+    <link rel="stylesheet" href="{{asset ("css/profilresponsive.css")}}">
 </head>
+<style>
+    html {
+        background-image: url({{asset('/img/images/fond1.jpg')}});
+    }
+    @font-face {
+        font-family: 'Futura';
+        src: url({{asset('/fonts/futura/Futura medium bt.tff')}}) format('truetype');
+    }
+    #textepage2 {
+        background-image: url({{asset('/img/images/fond2.jpg')}});
+    }
+    #texteseries {
+        background-image: url({{asset('/img/images/fond2.jpg')}});
+
+    }
+    #main404 {
+
+        background-image: url({{asset ('/img/images/connexionimg.jpg')}});
+    }
+</style>
 <body>
 <!-- Authentication Links -->
 <div id="main">

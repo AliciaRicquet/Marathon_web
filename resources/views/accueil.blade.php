@@ -22,25 +22,21 @@
             <img src="{{asset('img/images/logo.png')}}" href="#textepage1">
             <a href="/">ACCUEIL</a>
             <a href="series">SÉRIES</a>
-            <a href="#">PROFIL</a>
+            <a href="utilisateur">PROFIL</a>
             @guest
             <a href="{{ route('login') }}">SE CONNECTER</a>
             <a href="{{ route('register') }}">S'INSCRIRE</a>
             @else
-                <ul>
-                    <li> Bonjour {{ Auth::user()->name }}</li>
                     @if (Auth::user())
-                        <li><a href="#">Des liens spécifiques pour utilisateurs connectés..</a></li>
                     @endif
-                    <li><a href="{{ route('logout') }}"
+                    <a href="{{ route('logout') }}"
                            onclick="event.preventDefault();
                            document.getElementById('logout-form').submit();">
-                            Logout
-                        </a></li>
+                            DECONNEXION
+                        </a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         {{ csrf_field() }}
                     </form>
-                </ul>
             <!--<div id="search">
                 <form>
                     <input type="image" id="recherche" alt="search" src="images/recherche.png">
