@@ -27,8 +27,4 @@ class Episode extends Model {
             ->withPivot('date_seen');
     }
 
-    function episodesVu(){
-
-    }
-
 }

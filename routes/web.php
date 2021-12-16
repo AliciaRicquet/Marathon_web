@@ -3,6 +3,7 @@
 use App\Http\Controllers\Controller;
 
 use App\Http\Controllers\ControllerAccueil;
+use App\Http\Controllers\ControlleurUser;
 use App\Http\Controllers\DetailsControllers;
 use App\Http\Controllers\SeriesControllers;
 use Illuminate\Support\Facades\Route;
@@ -26,5 +27,6 @@ Route::get('/genre/{genre}', [SeriesControllers::class, 'genreSerie'])->name('se
 Route::resource('utilisateur', '\App\Http\Controllers\ControlleurUser');
 
 Route::post('/detailsSerie/commenter/{id}',[SeriesControllers::class, 'commenter'] )->name('detailsSerie.commenter');
-
+//Route::resource('serie', '\App\Http\Controllers\SeriesControllers');
+//Route::post('/detailsSerie/{id}', [SeriesControllers::class, 'commenter'])->middleware('auth');
 //Route::post("/login", );

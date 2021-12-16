@@ -20,8 +20,7 @@
         </form>
         @foreach($detailsSeries->comments as $c)
             {!! $c->content !!}
-            @if($c->user_id == Auth::id())
-                <p>"en attente de validation"</p>
+            @if(Auth::user()->administrateur)
             @endif
         @endforeach
         <p>Liste des episodes</p>
@@ -40,5 +39,5 @@
             <p>{{$ep->nom}}, Episode: {{$ep->numero}} de la saison {{$ep->saison}}</p>
             <p><img src="{{asset($ep->urlImage)}}" alt="Image Episodes"></p>
         @endforeach
-    @endguest
+
 @endsection
