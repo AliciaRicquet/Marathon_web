@@ -74,13 +74,6 @@
                     <h1> Les séries que vous avez aimé : </h1>
                 </div>
             </div>
-
-            <h2>Liste des séries vues: </h2>
-            @foreach($ie as $l)
-                @if($l == Episode::id())
-                    <p>{{Serie::all()}}</p>
-                @endif
-            @endforeach
         @endguest
     </content>
     </html>

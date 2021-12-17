@@ -29,7 +29,7 @@ class ControlleurUser extends Controller
         $tab = array_unique($tab);
 
         $tab2 = Comment::all();
-        return view('utilisateur.index', ['tab' => $tab, 'tab2' => $tab2]);
+        return view('index', ['tab' => $tab, 'tab2' => $tab2]);
     }
 
     /**
@@ -40,6 +40,6 @@ class ControlleurUser extends Controller
     public function show($id)
     {
         $iu = User::find($id);
-        return view('utilisateur.show', ['iu' => $iu]);
+        return view('show', ['iu' => $iu]);
     }
 }
